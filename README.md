@@ -1,1 +1,1 @@
-# Simple (unstyled) Student Registry App using Spring Boot, Thymeleaf & MySQL.
+# Simple (unstyled) Student Registry App using Spring Boot, Spring Security, Thymeleaf & MySQL. 
