@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+
+<ul th:each = "st: ${studentNames}">
+    <li ><a th:href="@{student/edit/{id}(id=${st.id})}" th:text="${st.name}"></a></li>
+</ul>
+<form th:method="POST" th:action="@{/student/create}">
+    <input type="text" name="name" placeholder="Name"/>
+    <input type="text" name="age" placeholder="Age"/>
+    <input type="text" name="number" placeholder="Number"/>
+    <input type="submit" />
+
+</form>
+</body>
+</html>
